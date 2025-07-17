@@ -1,21 +1,21 @@
 FROM ubuntu:20.04
 MAINTAINER meetparmar14790@gmail.com
- 
+
 ENV DEBIAN_FRONTEND=noninteractive
- 
+
 RUN apt update && \
     apt install -y tzdata apache2 zip unzip && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
- 
+
 # Download GitHub zip (you can rename it while downloading)
-ADD https://codeload.github.com/themewagon/Crypgo/zip/refs/tags/v1.0.0 /var/www/html/Crypgo-1.0.0.zip
- 
+ADD https://codeload.github.com/themewagon/Crypgo/zip/refs/tags/v1.0.0 /var/www/html/Crypgo.zip
+
 WORKDIR /var/www/html
- 
-RUN Crypgo-1.0.0.zip && \
+
+RUN unzip Crypgo.zip && \
     cp -rvf Crypgo-1.0.0/* . && \
-    rm -rf Crypgo-1.0.0.zip Crypgo-1.0.0
- 
+    rm -rf Crypgo.zip Crypgo-1.0.0
+
 EXPOSE 80
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
