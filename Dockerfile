@@ -9,7 +9,7 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
  
 # Download GitHub zip (you can rename it while downloading)
-ADD https://github.com/codewithsadee/tourly.git /var/www/html/iPortfolio.zip
+ADD https://github.com/Yash-srivastav16/Tour-website-2.git /var/www/html/iPortfolio.zip
  
 WORKDIR /var/www/html
  
