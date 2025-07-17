@@ -9,7 +9,7 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
  
 # Download GitHub zip (you can rename it while downloading)
-ADD https://codeload.github.com/themewagon/iPortfolio/zip/refs/tags/v1.0.0 /var/www/html/iPortfolio.zip
+ADD https://github.com/codewithsadee/tourly /var/www/html/iPortfolio.zip
  
 WORKDIR /var/www/html
  
