@@ -9,13 +9,13 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
  
 # Download GitHub zip (you can rename it while downloading)
-ADD https://github.com/Yash-srivastav16/Tour-website-2.git /var/www/html/iPortfolio.zip
+ADD https://codeload.github.com/themewagon/Crypgo/zip/refs/tags/v1.0.0 /var/www/html/Crypgo-1.0.0.zip
  
 WORKDIR /var/www/html
  
-RUN unzip iPortfolio.zip && \
-    cp -rvf iPortfolio-1.0.0/* . && \
-    rm -rf iPortfolio.zip iPortfolio-1.0.0
+RUN Crypgo-1.0.0.zip && \
+    cp -rvf Crypgo-1.0.0/* . && \
+    rm -rf Crypgo-1.0.0.zip Crypgo-1.0.0
  
 EXPOSE 80
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
