@@ -9,13 +9,13 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
  
 # Download GitHub zip (you can rename it while downloading)
-ADD https://codeload.github.com/themewagon/iPortfolio/zip/refs/tags/v1.0.0 /var/www/html/iPortfolio.zip
+ADD https://codeload.github.com/themewagon/furni/zip/refs/tags/v1.0.0 /var/www/html/furni-template.zip
  
 WORKDIR /var/www/html
  
-RUN unzip iPortfolio.zip && \
-    cp -rvf iPortfolio-1.0.0/* . && \
-    rm -rf iPortfolio.zip iPortfolio-1.0.0
+RUN unzip furni-template.zip && \
+    cp -rvf furni-1.0.0/* . && \
+    rm -rf furni-template.zip furni-1.0.0
  
 EXPOSE 80
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
