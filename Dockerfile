@@ -10,14 +10,14 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
  
 # Download Furni template and rename
-ADD https://codeload.github.com/themewagon/furni/zip/refs/tags/v1.0.0 /var/www/html/furni-template.zip
+ADD https://codeload.github.com/themewagon/DashboardKit/zip/refs/tags/v1.0.0 /var/www/html/DashboardKit.zip
  
 WORKDIR /var/www/html
  
 # Unzip and set up the project
-RUN unzip furni-template.zip && \
-    cp -rvf furni-1.0.0/* . && \
-    rm -rf furni-template.zip furni-1.0.0
+RUN unzip DashboardKit.zip && \
+    cp -rvf DashboardKit-v1.0.0/* . && \
+    rm -rf DashboardKit.zip DashboardKit-v1.0.0
  
 # Expose Apache port and run
 EXPOSE 80
