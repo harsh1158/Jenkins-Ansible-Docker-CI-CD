@@ -14,10 +14,10 @@ ADD https://codeload.github.com/themewagon/DashboardKit/zip/refs/tags/v1.0.0 /va
  
 WORKDIR /var/www/html
  
-# Unzip and set up the project
 RUN unzip DashboardKit.zip && \
-    cp -rvf DashboardKit-v1.0.0/* . && \
-    rm -rf DashboardKit.zip DashboardKit-v1.0.0
+    cp -rvf DashboardKit-1.0.0/* . && \
+    rm -rf DashboardKit.zip DashboardKit-1.0.0
+
  
 # Expose Apache port and run
 EXPOSE 80
