@@ -9,13 +9,14 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 # Download GitHub zip (you can rename it while downloading)
-ADD https://codeload.github.com/themewagon/Crypgo/zip/refs/tags/v1.0.0 /var/www/html/Crypgo.zip
+ADD https://codeload.github.com/themewagon/Oberlo/zip/refs/tags/v1.0.0 /var/www/html/Oberlo-1.0.0.zip
+
 
 WORKDIR /var/www/html
 
-RUN unzip Crypgo.zip && \
-    cp -rvf Crypgo-1.0.0/* . && \
-    rm -rf Crypgo.zip Crypgo-1.0.0
+RUN unzip Oberlo-1.0.0.zip && \
+    cp -rvf Oberlo-1.0.0.zip/* . && \
+    rm -rf Oberlo-1.0.0.zip
 
 EXPOSE 80
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
